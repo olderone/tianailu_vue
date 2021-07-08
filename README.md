@@ -35,5 +35,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## config——配置目录
 ## static——静态文件目录
 ## src/apis——处理服务器请求
-## src/components——vue组件
+## src/components/home——后台管理组件
+## src/components/home——公众号页面组件
 ## src/utils——通用文件
