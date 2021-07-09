@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img v-show="!(path ==='/') " src="./../static/img/1.png">
+    <img src="./../static/img/1.png">
     <router-view/>
   </div>
 </template>
@@ -19,5 +19,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#app img {
+  width:50%
 }
 </style>

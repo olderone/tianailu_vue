@@ -3,6 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui'
+// 引入工具文件
+
+import 'element-ui/lib/theme-chalk/index.css'
+
+
+Vue.config.productionTip = false
+
+// 将ElementUI绑定到全局
+Vue.use(ElementUI)
+
+// 将工具方法绑定到全局
 
 Vue.config.productionTip = false
 
