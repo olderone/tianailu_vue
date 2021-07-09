@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img v-show="!(path ==='/') " src="./../static/img/1.png">
     <router-view/>
   </div>
 </template>

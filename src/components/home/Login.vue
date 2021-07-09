@@ -1,7 +1,7 @@
 <template>
     <div id="login">
         <el-form :model="loginForm" ref="loginForm" :rules="loginRules">         
-            <h2>Ray商城登录</h2>
+            <h2></h2>
             <el-form-item prop="username">
                 <el-input name="username" placeholder="请输入手机号" auto-complete="on"></el-input>
             </el-form-item>
@@ -23,30 +23,30 @@ export default {
   name: "#login",
   data() {
     return {
+      path:'',
+      loginForm: {
+        username: '',
+        password: '',
+      },
+      loginRules: {
+          username: [
+              {
+                  required: true,
 
-    },
-    loginForm: {
-      username: '',
-      password: '',
-    },
-    loginRules: {
-        username: [
-            {
-                required: true,
+                  message: "请输入用户名",
 
-                message: "请输入用户名",
-
-                trigger: "blur"
-            }
-        ],
-        password: [
-           {
-               required: true,
-               message: '请输入密码',
-               trigger: 'blur'
-           }
-        ]
+                  trigger: "blur"
+              }
+          ],
+          password: [
+             {
+                 required: true,
+                 message: '请输入密码',
+                 trigger: 'blur'
+             }
+          ]
       }
+    }
   },
   methods: {
     handleLogin (){
@@ -67,6 +67,16 @@ export default {
                }
            })
       }
+  },
+  // 判断路由
+  mounted() {
+   this.path = this.$route.path;
+   console.log(this.$route.path)
+  },
+  watch:{
+    $route(to,from){
+      this.path = to.path
+    }
   }
 };
 </script>
