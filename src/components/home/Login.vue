@@ -1,13 +1,16 @@
 <template>
     <div id="login">
+        <div class=logo>
+          <img src="./../../../static/img/1.png">
+        </div>
         <el-form :model="loginForm" ref="loginForm" :rules="loginRules">         
             <h4>开启你的甜蜜爱情之路</h4>
             <el-form-item prop="username">
-                <el-input class="input-login" name="username" placeholder="请输入手机号" auto-complete="on"></el-input>
+                <el-input class="input-login" v-model="loginForm.username" name="username" placeholder="请输入手机号" auto-complete="on"></el-input>
             </el-form-item>
 
             <el-form-item prop="password">
-                <el-input class="verfy input-login" name="password" placeholder="请输入验证码" auto-complete="on"></el-input>
+                <el-input class="verfy input-login" v-model="loginForm.password" name="password" placeholder="请输入验证码" auto-complete="on"></el-input>
                 <el-button class="verfy-button" type="primary">获取验证码</el-button>
             </el-form-item>
 
@@ -88,6 +91,9 @@ export default {
     height:60px;
     width:40%;
     margin-left:2%;
+  }
+  .logo img {
+    width: 50%;
   }
 
 </style>

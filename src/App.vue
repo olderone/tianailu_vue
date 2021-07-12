@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./../static/img/1.png">
+    <!-- <img src="./../static/img/1.png"> -->
     <router-view/>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   margin-top: 60px;
 }
 
-#app img {
+/*#app img {
   width:50%
-}
+}*/
 </style>
