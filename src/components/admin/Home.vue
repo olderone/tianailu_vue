@@ -1,23 +1,10 @@
 <template>
-  <div class="login">
-    <h1>
-      甜爱路-客户管理系统
-    </h1>
-    <div class="login-wrap">
-      <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="用户名">
-          <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
-        </el-form-item>
-        <el-form-item label="密码">
-          <el-input v-model="form.name" placeholder="请输入密码"></el-input>
-        </el-form-item>
-      </el-form>
-      <div class="remember-psd">
-        <span>记住密码</span>
-        <el-checkbox v-model="form.checked"></el-checkbox>
-      </div>
-      <el-button class="login-btn">登陆</el-button>
-      <span class="forget-psd">忘记密码?</span>
+  <div class="home">
+    <div>
+      客户管理系统
+    </div>
+    <div>
+      这是界面
     </div>
   </div>
 </template>
