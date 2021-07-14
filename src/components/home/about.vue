@@ -3,21 +3,17 @@
         <div class=logo>
           <img src="./../../../static/img/1.png">
         </div>
-        <el-form :model="loginForm" ref="loginForm" :rules="loginRules">         
-            <h4>开启你的甜蜜爱情之路</h4>
-            <el-form-item prop="username">
-                <el-input class="input-login" v-model="loginForm.username" name="username" placeholder="请输入手机号" auto-complete="on"></el-input>
-            </el-form-item>
-
-            <el-form-item prop="password">
-                <el-input class="verfy input-login" v-model="loginForm.password" name="password" placeholder="请输入验证码" auto-complete="on"></el-input>
-                <el-button class="verfy-button" type="primary">获取验证码</el-button>
-            </el-form-item>
-
-            <el-form-item>
-                <el-button class="login-button" type="info" @click="handleLogin">登 录</el-button>
-            </el-form-item>
-        </el-form>
+        <div class="body">
+          <el-row :gutter="20">
+            <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+            <el-col :span="16"><div class="grid-content bg-purple">
+              
+            </div></el-col>
+            <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+          </el-row>
+          
+        </div>
+        
     </div>
 </template>
 <script>
@@ -25,73 +21,35 @@ import {loginReq} from '@/apis/home/login'
 export default {
   data() {
     return {
-      loginForm: {
-        username: '',
-        password: '',
-      },
-      loginRules: {
-          username: [
-              {
-                  required: true,
-                  message: "请输入用户名",
-                  trigger: "blur"
-              }
-          ],
-          password: [
-             {
-                 required: true,
-                 message: '请输入密码',
-                 trigger: 'blur'
-             }
-          ]
-      }
+      activeName: 'second'
     }
   },
   methods: {
-    handleLogin (){
-           this.$refs.loginForm.validate((valid) => {
-              if(valid){
-                loginReq(this.loginForm.username,this.loginForm.password).then((res) => {
-                    this.$router.push({
-                        name: "Home",
-                        params: {
-                          username: this.loginForm.username
-                       }
-                    });
-                })
-              }else{
-                this.$message.error("用户名或密码错误");
-              }
-           })
-      }
+    handleClick(tab, event) {
+      console.log(tab, event);
+    }
   }
 };
 </script>
 <style scoped>
-  .el-form {
-    margin-top:60px;
+  .tianailu-tabs{
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
   }
-  .el-input {
-          width:100%;
-          height:60px;
+  .tianailu-tabs /deep/ .el-tabs__nav {
+    float: none;
   }
-  .login-button {
-    width: 100%;
-    padding:20px;
-    margin-top:20px
+  .tianailu-tabs[data-v-a7635c26] /deep/ .el-tabs__nav {
+    height: 60px;
+    border-style:solid;
+    border-width:1px;
+    border-radius: 10px; 
   }
-  .verfy {
-    width:55%;
-    text-align:left;
+  .el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2), .el-tabs--bottom .el-tabs__item.is-top:nth-child(2), .el-tabs--top .el-tabs__item.is-bottom:nth-child(2), .el-tabs--top .el-tabs__item.is-top:nth-child(2){
+    margin-top: 10px;
   }
-  .input-login /deep/  input {
-    height:60px;
-  }
-  .verfy-button {
-    height:60px;
-    width:40%;
-    margin-left:2%;
-  }
+  
   .logo img {
     width: 50%;
   }
