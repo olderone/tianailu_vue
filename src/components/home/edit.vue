@@ -89,8 +89,8 @@
             <el-row class="margin-top">
               <el-col :span="8"><div class="grid-content bg-purple edit-type"><span>公司性质：</span></div></el-col>
               <el-col :span="14"><div class="grid-content bg-purple-light">
-                <el-select v-model="editForm.co" placeholder="请选择">
-                  <el-option v-for="item in editForm.cos" :key="item.value" :label="item.label" :value="item.value"/>
+                <el-select v-model="editForm.co_type" placeholder="请选择">
+                  <el-option v-for="item in editForm.co_types" :key="item.value" :label="item.label" :value="item.value"/>
                 </el-select>
               </div></el-col>
             </el-row>   
@@ -294,22 +294,26 @@ export default {
         ],
         school:"",
         work:"",
-        co:"",
-        cos: [
+        co_type:"",
+        co_types: [
           {
             value: '0',
             label: '国有企业'
           },
           {
             value: '1',
-            label: '民营企业'
+            label: '上市企业'
           },
           {
             value: '2',
-            label: '政府'
+            label: '私营企业'
           },
           {
             value: '3',
+            label: '政府'
+          },
+          {
+            value: '4',
             label: '事业单位'
           }
         ],

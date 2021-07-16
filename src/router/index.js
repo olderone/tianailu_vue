@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/home/login'
 import Edit from '@/components/home/edit'
 import About from '@/components/home/about'
+import Ta from '@/components/home/ta'
 
 Vue.use(Router)
 
@@ -17,6 +18,9 @@ export default new Router({
     },{
       path: '/about',
       component: About
+    },{
+      path: '/ta',
+      component: Ta
     }
   ]
 })
