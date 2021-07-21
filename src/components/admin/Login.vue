@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1>
+    <h1 class="tit">
       甜爱路-客户管理系统
     </h1>
     <div class="login-wrap">
@@ -73,5 +73,9 @@ export default {
   color: #8590a6;
   font-size: 14px;
   cursor: pointer;
+}
+.tit{
+  text-align: center;
+  padding: 40px 0 20px 0;
 }
 </style>
