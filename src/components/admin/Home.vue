@@ -1,64 +1,56 @@
 <template>
   <div class="home">
-    <div>
-      客户管理系统
-    </div>
-    <div>
-      这是界面
-    </div>
+    <el-container>
+      <el-aside>
+        <el-row class="tac">
+          <el-col>
+            <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+              <el-menu-item index="1">
+                <i class="el-icon-menu"></i>
+                <span >首页</span>
+              </el-menu-item>
+               <el-submenu index="2">
+                 
+                <template slot="title">
+                  <i class="el-icon-menu"></i>
+                <span >客户管理</span>
+                </template>
+                <el-menu-item index="2-1">客户信息管理</el-menu-item>
+                <el-menu-item index="2-2">意向客户</el-menu-item>
+               
+              </el-submenu>
+               
+            </el-menu>
+          </el-col>
+          
+        </el-row>
+      </el-aside>
+      <el-main>
+        222
+      </el-main>
+    </el-container>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
-        checked: false,
-      },
-    };
+    return {};
   },
   methods: {
-    onSubmit() {
-      console.log("submit!");
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      },
     },
   },
 };
 </script>
 
 <style scoped>
-.login-wrap {
-  width: 40vw;
-  border: solid 1px #ccc;
-  margin: 60px auto;
-  padding: 36px;
-  box-sizing: border-box;
-  border-radius: 8px;
-  box-shadow: 4px 3px 2px rgb(166 166 166 / 30%);
-}
-.remember-psd {
-  text-align: left;
-  padding: 22px;
-  display: block;
-  font-size: 14px;
-}
-.login-btn {
-  display: block;
-  margin: 0 auto;
-}
-.forget-psd {
-  text-align: right;
-  display: block;
-  color: #8590a6;
-  font-size: 14px;
-  cursor: pointer;
+.home {
 }
 </style>
