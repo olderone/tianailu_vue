@@ -23,5 +23,14 @@ export default {
 .tit{
   text-align: center;
   padding: 40px 0 20px 0;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(166 166 166 / 70%);
+  box-sizing: border-box;
+}
+</style>
+
+<style >
+.home ul.el-menu-vertical-demo.el-menu{
+  height: calc(100vh - 120px);
 }
 </style>

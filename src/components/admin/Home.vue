@@ -4,7 +4,7 @@
       <el-aside>
         <el-row class="tac">
           <el-col>
-            <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+            <el-menu :default-active="activeIndex" class="el-menu-vertical-demo"  @select="handleSelect">
               <el-menu-item index="1">
                 <i class="el-icon-menu"></i>
                 <span >首页</span>
@@ -17,16 +17,28 @@
                 </template>
                 <el-menu-item index="2-1">客户信息管理</el-menu-item>
                 <el-menu-item index="2-2">意向客户</el-menu-item>
-               
+                <el-menu-item index="2-3">会员管理</el-menu-item>
               </el-submenu>
-               
             </el-menu>
           </el-col>
           
         </el-row>
       </el-aside>
       <el-main>
-        222
+        <div v-if="currentTab == 1" class="client-wrap">
+          <div class="client-item">客户：</div>
+          <div class="client-item">意向客户：</div>
+          <div class="client-item">会员：</div>
+        </div>
+        <div v-if="currentTab == '2-1'">
+          客户信息管理
+        </div>
+        <div v-if="currentTab == '2-2'">
+          意向客户
+        </div>
+        <div v-if="currentTab == '2-3'">
+          会员管理
+        </div>
       </el-main>
     </el-container>
   </div>
@@ -35,17 +47,22 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      activeIndex: '1',
+      currentTab: '1'
+    };
   },
   methods: {
-    methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
       },
-    },
+       handleSelect(key, keyPath) {
+         this.currentTab = key;
+        console.log(this.activeIndex, keyPath);
+      }
   },
 };
 </script>
@@ -53,4 +70,14 @@ export default {
 <style scoped>
 .home {
 }
+.client-wrap{
+  display: flex;
+}
+.client-item{
+  /* width: 200px; */
+  flex: 1;
+  height: 280px;
+  background: red;
+  margin-left: 5px;
+} 
 </style>
